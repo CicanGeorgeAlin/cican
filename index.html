@@ -124,6 +124,62 @@
             btn.innerText = "Scan Another Entity";
         }, 2200);
     }
+        function showLeadCapture() {
+    // Wait 1 second after terminal finishes for dramatic effect
+    setTimeout(() => {
+        document.getElementById('leadCapture').style.display = 'block';
+    }, 1000);
+}
+
+// Handle the Form Submission
+document.getElementById('sovereignForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('userEmail').value;
+    
+    // Log it so you can see it in Vercel/Inspect
+    console.log("LEAD CAPTURED: " + email);
+    
+    // Visual Feedback
+    this.innerHTML = "<h3 style='color:#00ff00;'>SENT! 📬</h3><p style='color:#fff;'>Check your inbox, George is on it.</p>";
+    
+    // Auto-hide after 3 seconds
+    setTimeout(() => {
+        document.getElementById('leadCapture').style.display = 'none';
+    }, 3000);
+});
     </script>
+    <footer ...> ... </footer>
+</body> ```
+
+**Paste the Lead Capture code directly ABOVE that `</body>` tag:**
+```html
+<div id="leadCapture" style="display:none; background: rgba(0,0,0,0.95); border: 2px solid #00ff00; padding: 30px; border-radius: 15px; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; width: 90%; max-width: 450px; text-align: center; font-family: 'Courier New', Courier, monospace; box-shadow: 0 0 30px rgba(0,255,0,0.3);">
+    
+    <h2 style="color: #00ff00; margin-bottom: 10px; font-size: 1.5rem;">🚨 SCAN COMPLETE</h2>
+    <p style="color: #ffffff; font-size: 1rem; margin-bottom: 20px;">
+        Trust Score: <span style="color: #ff4444; font-weight: bold;">52% (Vulnerable)</span><br>
+        <small style="color: #888;">Metadata Debt & "Cowboy" errors detected.</small>
+    </p>
+
+    <div style="background: #111; padding: 12px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #333;">
+        <p style="color: #00ff00; font-size: 0.85rem; margin: 0;">
+            "I normally ask for <strong>50 Euro</strong>, but this is a friendship-first gift for you."
+        </p>
+    </div>
+
+    <form id="sovereignForm">
+        <input type="email" id="userEmail" placeholder="Your Business Email" required 
+            style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #00ff00; background: #000; color: #00ff00; outline: none;">
+        
+        <button type="submit" 
+            style="background: #00ff00; color: #000; padding: 12px 25px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1rem;">
+            SEND ME THE 10-ITEM FIX 🚀
+        </button>
+    </form>
+    
+    <p style="color: #666; font-size: 0.7rem; margin-top: 15px;">
+        CICAN Algorithm | Local SEO Dublin Strategist
+    </p>
+</div>
 </body>
 </html>
